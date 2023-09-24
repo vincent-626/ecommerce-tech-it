@@ -7,82 +7,69 @@ function Navbar() {
   const handleClick = () => setClick(!click);
 
   return (
-    <nav>
-      {/* Navigation bar */}
-      <div className="mx-auto bg-gray-800 p-5 sticky shadow-md w-full">
-        <div className="flex items-center justify-between">
-          <div className="text-white font-bold text-xl">
-            <Link
-              to="/"
-              onClick={handleClick}
-            >
-              <i className="fa-solid fa-truck-fast" /> Tech It
-            </Link>
-          </div>
-          <div className="hidden sm:flex space-x-4">
-            <Link
-              to="/"
-              className="text-white hover:text-gray-200"
-            >
-              Home
-            </Link>
-            <Link
-              to="/categories"
-              className="text-white hover:text-gray-200"
-            >
-              Categories
-            </Link>
-            <Link
-              to="/cart"
-              className="text-white hover:text-gray-200"
-            >
-              <i className="fa-solid fa-cart-shopping" /> Cart
-            </Link>
-          </div>
-          <div className="sm:hidden">
-            <button className="text-white">
-              <i
-                className={click ? "fa-solid fa-times" : "fa-solid fa-bars"}
-                onClick={handleClick}
-              />
-            </button>
-          </div>
-        </div>
+    <nav className="bg-gray-800 p-5 shadow-md md:flex md:items-center md:justify-between">
+      <div className="flex justify-between items-center h-10">
+        <span className="text-white font-bold text-2xl">
+          <Link
+            to="/"
+            onClick={() => setClick(false)}
+          >
+            <i className="fa-solid fa-truck-fast" /> Tech It
+          </Link>
+        </span>
+
+        <span className="text-3xl cursor-pointer text-white mx-2 md:hidden block">
+          <i
+            className={click ? "fa-solid fa-times" : "fa-solid fa-bars"}
+            onClick={handleClick}
+          />
+        </span>
       </div>
-      {/* Mobile menu */}
-      {/* TODO: Add transition */}
+
       <ul
-        className={`bg-gray-500 flex flex-col items-center pt-10 pb-10 gap-6 ${
-          click ? "block" : "hidden"
-        } sm:hidden`}
+        className={`md:flex md:items-center md:z-auto z-[-1] md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-4 md:bg-gray-800 ${
+          click
+            ? "opacity-100 top-[70px] bg-gray-600"
+            : "opacity-0 top-[-400px] bg-gray-800"
+        } md:opacity-100 transition-all md:transition-none ease-in-out duration-500`}
       >
-        <li>
+        <li className="mx-4 md:mx-0 my-6 md:my-0">
           <Link
             to="/"
             className="text-white hover:text-gray-200"
-            onClick={handleClick}
           >
-            Home
+            <button
+              className="px-3 py-2"
+              onClick={handleClick}
+            >
+              HOME
+            </button>
           </Link>
         </li>
-
-        <li>
+        <li className="mx-4 md:mx-0 my-6 md:my-0">
           <Link
             to="/categories"
             className="text-white hover:text-gray-200"
-            onClick={handleClick}
           >
-            Categories
+            <button
+              className="px-3 py-2"
+              onClick={handleClick}
+            >
+              CATEGORIES
+            </button>
           </Link>
         </li>
-
-        <li>
+        <li className="mx-4 md:mx-0 my-6 md:my-0">
           <Link
             to="/cart"
             className="text-white hover:text-gray-200"
-            onClick={handleClick}
           >
-            <i className="fa-solid fa-cart-shopping" /> Cart
+            <button
+              className="bg-blue-300 text-black ml-3 px-6 py-2 hover:bg-gray-500 rounded duration-300"
+              onClick={handleClick}
+            >
+              <i className="fa-solid fa-cart-shopping" /> Cart
+            </button>
           </Link>
         </li>
       </ul>
