@@ -4,6 +4,46 @@
 
 @layer base {
   button {
-    @apply border border-black rounded-xl px-5 py-1;
+    @apply px-5 py-1 border border-black rounded-xl;
+  }
+}
+
+@layer components {
+  .alert-added {
+    text-align: center;
+    color: white;
+    background-color: #373737;
+    padding: 1.2rem 2.2rem;
+    z-index: 999999999;
+    font-size: 1.2rem;
+    position: fixed;
+    transform: translate(-50%);
+    top: -100%;
+    left: 50%;
+  }
+
+  .alert-added.slide-in {
+    animation-duration: 2s;
+    /* animation-delay: -1s; */
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slidein {
+    0% {
+      top: -50%;
+    }
+
+    40% {
+      top: 85px;
+    }
+
+    60% {
+      top: 85px;
+    }
+
+    100% {
+      top: -50%;
+    }
   }
 }
