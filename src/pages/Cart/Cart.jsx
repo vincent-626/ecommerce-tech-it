@@ -11,7 +11,7 @@ function Cart() {
 
   return (
     <>
-      <div className="max-w-[1640px] mx-auto p-4">
+      <div className="max-w-[1640px] mx-auto p-4 mt-[6rem]">
         <h1 className="my-8 text-3xl font-bold text-center">
           <i className="fa-solid fa-bag-shopping" /> Your Cart
         </h1>

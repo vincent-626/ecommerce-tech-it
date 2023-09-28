@@ -6,7 +6,7 @@ function CategoriesHeader(props) {
 
   return (
     <div>
-      <h1 className="max-w-[1640px] mx-auto font-bold text-5xl text-center pt-20">
+      <h1 className="max-w-[1640px] mx-auto font-bold text-5xl text-center pt-20 mt-[6rem]">
         {category}
       </h1>
 

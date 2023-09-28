@@ -8,7 +8,7 @@ function Navbar(props) {
   const handleClick = () => setClick(!click);
 
   return (
-    <nav className="max-w-[1640px] mx-auto">
+    <nav className="max-w-[1640px] mx-auto fixed z-[9999] top-0 w-full">
       {/* Mobile screen */}
       <div className="max-w-[1640px] md:hidden mx-auto">
         {/* Top bar */}

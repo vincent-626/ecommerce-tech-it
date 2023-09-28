@@ -15,12 +15,12 @@ function ProductPage(props) {
     <>
       <div
         onAnimationEnd={() => setNotify(false)}
-        className={`alert-added ${notify ? "slide-in" : ""}`}
+        className={`mt-[1rem] alert-added ${notify ? "slide-in" : ""}`}
       >
         <i className="mr-2 fa-solid fa-cart-shopping" /> Item is successfully
         added to cart!
       </div>
-      <div className="max-w-[1640px] mx-auto p-4">
+      <div className="max-w-[1640px] mx-auto p-4 mt-[6rem]">
         <Link
           to={`/categories/${category}`}
           className="w-full h-full p-2 text-lg font-medium text-gray-800"
